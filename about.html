@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Catalina Bustos - Diseñadora Integral</title>
+        <link href="style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="container">
+            <!-- Header -->
+            <header class="header">
+                <h1>CATALINA BUSTOS</h1>
+                <p>Diseñadora Integral</p>
+            </header>
+
+            <!-- Navigation -->
+            <nav class="nav">
+                <a href="index.html">Portafolio</a>
+                <a href="about.html" class="active">Sobre mí</a>
+            </nav>
+
+            <!-- Gallery -->
+            <section class="gallery">
+                <div class="yo">
+                    <div class="gallery-item">
+                        <img src="img/yo.png" alt="yo" />
+                        <div class="gallery-overlay">
+                            <h3>Catalina Bustos</h3>
+                        </div>
+                    </div>
+                    <div class="sobre">
+                        <h1>ACERCA DE MI</h1>
+                        <br />
+                        <p>
+                            Soy estudiante de tercer año en Diseño Integral de la Pontificia Universidad Católica de Chile. Me enfoco en mejorar la experiencia de los usuarios a través de soluciones prácticas y creativas, siempre con una
+                            perspectiva empática. Valoro el trabajo en equipo y la comunicación asertiva para mantener un ambiente agradable.
+                        </p>
+                        <br />
+                        <p>
+                            Veo el diseño como una herramienta para transformar y mejorar realidades generando conexión entre las personas y su entorno. Constantemente busco desafiarme para ampliar mis conocimientos y habilidades en diseño
+                            en proyectos interdiciplinarios, encontrando inspiración en los detalles cotidianos y mi entorno.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="grafico">
+                <div style="max-width: 800px; margin: 50px auto; text-align: center; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    <h2 style="margin-bottom: 30px; color: #333;">Mis promedios en Taller de Diseño UC</h2>
+                    <div style="width: 100%; height: 400px;">
+                        <canvas id="myLineChart"></canvas>
+                    </div>
+                </div>
+
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+                <script>
+                    const ctx = document.getElementById("myLineChart").getContext("2d");
+
+                    const data = {
+                        labels: ["Taller 1", "Taller 2", "Taller 3", "Taller 4", "Taller 5", "Taller 6"],
+                        datasets: [
+                            {
+                                label: "Talleres de Diseño",
+                                data: [5.5, 5.8, 5.9, 6.3, 6.2, 6.7],
+                                borderColor: "rgb(133, 79, 40)",
+                                backgroundColor: "rgba(133, 79, 40, 0.2)",
+                                tension: 0.1,
+                            },
+                        ],
+                    };
+
+                    const config = {
+                        type: "line",
+                        data: data,
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: true,
+                            plugins: {
+                                legend: {
+                                    position: "top",
+                                },
+                            },
+                        },
+                    };
+
+                    const myLineChart = new Chart(ctx, config);
+                </script>
+            </section>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <p>© 2025 Catalina Bustos. Todos los derechos reservados.</p>
+                <div class="social-links">
+                    <a href="https://www.behance.net/catalinbustosj">Behance</a>
+                    <a href="https://www.linkedin.com/in/catalina-bustos-jara-680b91311/">LinkedIn</a>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>
+
